@@ -1,0 +1,19 @@
+.first-color {
+    margin-left: -10px;
+}
+
+.second-color {
+    margin-left: 15px;
+}
+
+color-tool {
+    display: flex;
+    margin-top: 20px;
+}
+
+color-tool .color-picker {
+    text-align: center;
+    background: none;
+    color: #000;
+    list-style: none;
+}

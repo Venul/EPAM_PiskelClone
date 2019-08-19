@@ -1,0 +1,36 @@
+{
+  "name": "piskel-clone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint --fix ./js",
+    "dev": "webpack-dev-server --mode development --watch",
+    "build": "webpack --mode production"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0",
+    "jest": "^24.8.0",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.2.10",
+    "css-loader": "^3.2.0",
+    "eslint-loader": "^2.2.1",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^1.0.0"
+  }
+}

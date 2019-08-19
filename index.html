@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script type="module" src="js/web-components/index.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/AppState.js"></script>
+    <script src="lib/jsgif-master/GIFEncoder.js"></script>
+    <script src="lib/jsgif-master/LZWEncoder.js"></script>
+    <script src="lib/jsgif-master/NeuQuant.js"></script>
+    <script src="lib/jsgif-master/b64.js"></script>
+    <script src="js/convert-to-gif.js"></script>
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Piskel Clone</title>
+</head>
+<body onload="onLoadHandler()">
+    <section class="animated-container">
+        <div class="main-block">
+            <div class="pallet-area section-area aside">
+                <h1 class="section-title">Pallete tools</h1>
+                <div class="section-content">
+                    <p>brush size</p>
+                    <brush-size id="brush-size">
+                        <ul class="size-piksel">
+                            <li selectable value="1"></li>
+                            <li selectable value="2"></li>
+                            <li selectable value="3"></li>
+                            <li selectable value="4"></li>
+                        </ul>
+                    </brush-size>
+                    <selector-tool id="pallete-tool">
+                        <ul class="list-group pallete-tool">
+                            <li class="icon-tool-pen custom-button tool-tip" selectable value="pen">
+                                <span>Pen (P)</span>
+                            </li>
+                            <li class="icon-tool-eraser custom-button tool-tip" 
+                                selectable value="eraser">
+                                <span>Eraser (E)</span>
+                            </li>
+                            <li class="icon-tool-paint-bucket custom-button tool-tip" 
+                                selectable value="bucket">
+                                <span>Color bucket (B)</span>
+                            </li>
+                            <li class="icon-tool-colorpicker custom-button tool-tip" 
+                                selectable value="colorpicker">
+                                <span>Color picker (O)</span>
+                            </li>
+                        </ul>
+                    </selector-tool>
+                    <color-tool id="color-tool">
+                        <ul>
+                            <li class="first-color color-picker">
+                                <input type="color" id="foreground-color" class="custom-button">
+                            </li> 
+                            <li class="second-color color-picker">
+                                <input type="color" id="background-color" class="custom-button">
+                            </li> 
+                        </ul>
+                    </color-tool>
+                    <selector-tool class="change-size-area" id="canvas-size">
+                        <p>canvas size</p>
+                        <div class="custom-button" selectable value="32">32</div>
+                        <div class="custom-button" selectable value="64">64</div>
+                        <div class="custom-button" selectable value="128">128</div>
+                    </selector-tool>
+                </div>
+            </div>
+            <div class="canvas-area">
+                <h1 class="section-title">Canvas</h1>
+                <action-handler class="draw-zone" id="action-handler" oncontextmenu="return false;">
+                    <layer-manager>
+                        <canvas-frame-layer id="canvas-frame-layer" class="animation-grid"></canvas-frame-layer>
+                    </layer-manager>
+                </action-handler>
+            </div>
+            <div class="animation-area aside section-area">
+                <h1 class="section-title">Animation</h1>
+                <tool-frame class="section-content">
+                        <button id="animation-stop" onclick="fullScreen()"
+                        class="custom-button tool-tip finish-animation full-screen" selectable>
+                            <span>Full screen mode</span>
+                            <i class="material-icons">
+                                fullscreen
+                            </i>
+                        </button>
+                    <animation-tool id="animation-tool">
+                        <canvas-frame-layer class="animation-grid animation" id="animation-canvas">
+                            <div class="input">Press ESC to return normal mode</div>
+                        </canvas-frame-layer>
+                        <div class="slider-wrapper">
+                            <input type="range" id="animation-speed-input" min="1" max="10" value="4" 
+                                    class="slider" oninput="onChangeAnimationSpeed()">
+                            <p> speed: 
+                                <span id="animation-speed-value"></span>
+                            </p> 
+                        </div>
+                        <div class="animation-buttons">
+                            <button id="animation-start" onclick="onStartAnimation()" 
+                                    class="custom-button tool-tip start-animation" selectable>
+                                <span>Start animation (S)</span>
+                                <i class="material-icons">
+                                    play_arrow
+                                </i>
+                            </button>
+                            <button id="animation-stop" onclick="onStopAnimation()" 
+                                    class="custom-button tool-tip finish-animation" selectable>
+                                <span>Finish animation (F)</span>
+                                <i class="material-icons">
+                                    stop
+                                </i>
+                            </button>
+                        </div>
+                    </animation-tool>
+                </tool-frame>
+                <div class="animation-buttons">
+                    <h2>Save to gif</h2>
+                    <button id="save-to-gif" class="custom-button tool-tip export" 
+                            onclick="saveToGifHandler()">
+                        <span>Create gif (G)</span>
+                        <i class="material-icons">
+                            gif
+                        </i>
+                    </button>
+                </div>
+                <div class="coordinates">
+                    <p>coordinates</p>
+                    <p id="coordinates"></p>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-block section-area">
+            <h1 class="section-title">Frames area</h1>
+            <div class="frame-list">
+                <div class="frame-buttons">
+                    <div>
+                        <button onclick="addFrame()" class="custom-button tool-tip" selectable>
+                            <span>Add frame (A)</span>
+                            <i class="material-icons">
+                                add
+                            </i>
+                        </button>
+                    </div>
+                    <div>
+                        <button onclick="removeFrame()" id="remove-frame" 
+                                class="custom-button tool-tip" selectable>
+                            <i class="material-icons">
+                                delete_forever
+                            </i>
+                            <span>Remove frame (R)</span>
+                        </button>
+                    </div>
+                    <div>
+                        <button onclick="duplicateFrame()" id="duplicate-frame" 
+                                class="custom-button tool-tip" selectable>
+                            <i class="material-icons">
+                                collections
+                            </i>
+                            <span>Duplicate frame (D)</span>
+                        </button>
+                    </div>
+                </div>
+                <frames-tool class="frame-block" id="frames-tool"></frames-tool>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

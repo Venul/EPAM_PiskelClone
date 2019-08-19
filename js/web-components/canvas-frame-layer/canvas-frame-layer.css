@@ -1,0 +1,34 @@
+.animation-grid {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+.animation-area-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.animation-area-wrapper > div {
+    background: #c0bcbc;
+    border: 1px solid #fff;
+}
+
+.animation-area-wrapper > div:hover {
+    outline: 2px solid #000;
+    outline-offset: -2px;
+}
+
+.animation-area-container {
+    display: grid;   
+}
+
+canvas-frame-layer[hidden] {
+    display: none;
+}
+
+canvas {
+    margin: 0 auto;
+    display: block;
+    background: #808080;
+}

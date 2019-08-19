@@ -1,0 +1,98 @@
+.section-title {
+    color: rgb(124, 121, 121);
+    height: 35px;
+    padding-top: 5px;
+    text-align: center;
+    width: 100%;
+    border: 1px solid rgb(130, 130, 130);
+    outline: 1px solid rgba(0, 0, 0, 0.74);
+    background: linear-gradient(rgb(49, 49, 49), rgb(77, 77, 77))
+}
+
+.section-area {
+    background-color: rgb(100, 100, 100);
+}
+
+.canvas-area {
+    background-color: rgb(49, 49, 49);
+    box-shadow: inset 0 0 10px #000; 
+}
+
+.canvas-area,
+.section-area {
+    border: 1px solid rgb(49, 49, 49);
+}
+
+.section-content {
+    padding: 10px;
+}
+
+.custom-button {
+    width: 46px;
+    height: 46px;
+    cursor: pointer;
+    background-color: rgb(49, 49, 49);
+    border: none;
+    color: #fff;
+    margin: 2px;
+    display: inline-flex;
+}
+
+.custom-button:hover {
+    background-color: rgba(68, 67, 67, 0.74);
+}
+
+p {
+    color: rgb(218, 218, 218);
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+button:disabled {
+    color: white;
+    background: #808080;
+}
+
+button:disabled:hover {
+    background: #808080;
+}
+
+.saveToGif button {
+    display: block;
+    margin: 0 auto;
+}
+
+.tool-tip span {
+	display: none;
+	padding: 2px 3px; 
+    margin-top: -28px;
+    font-size: 12px;
+}
+
+.tool-tip:hover span {
+	display: inline; 
+	position: absolute; 
+    background: grey;
+    border: 1px solid #cccccc;
+    color: #cccccc;
+}
+
+button.tool-tip span {
+    margin: -36px 0 0 -4px;
+}
+
+.tool-tip.finish-animation span {
+    margin-left: -85px;
+}
+
+.tool-tip.start-animation span {
+    margin-left: -25px;
+}
+
+.tool-tip.export span {
+    margin-left: -50px;
+}
+
+.color-picker.tool-tip span {
+    margin-top: 13px;
+}

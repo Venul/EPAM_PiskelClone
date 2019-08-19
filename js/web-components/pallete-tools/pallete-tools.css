@@ -1,0 +1,71 @@
+.size-piksel li:first-child {
+    width: 5px;
+    height: 5px;
+}
+
+.size-piksel li:nth-child(2) {
+    width: 7px;
+    height: 7px;
+}
+
+.size-piksel li:nth-child(3) {
+    width: 9px;
+    height: 9px;
+}
+
+.size-piksel li:last-child {
+    width: 11px;
+    height: 11px;
+}
+
+.size-piksel li {
+    margin: 0 3px;
+    cursor: pointer;
+    border: 1px solid rgb(49, 49, 49);
+}
+
+.size-piksel {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.list-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 80%;
+}
+
+.pallet-area li {
+    background-image: url(../../../src/icons.png);
+}
+
+.icon-tool-pen {
+    background-position: -182px -92px;
+}
+
+.icon-tool-eraser {
+    background-position: -46px -228px;
+}
+
+.icon-tool-paint-bucket {
+    background-position: -228px -92px;
+}
+
+.icon-tool-colorpicker {
+    background-position: -274px 0px;
+}
+
+input[type="color"] {
+    height: 44px;
+}
+
+selector-tool#pallete-tool *[selected],
+selector-tool#canvas-size *[selected] {
+    border: 3px solid coral;
+    transform: scale(0.95);
+    transition: 0.25s;
+    pointer-events: none;
+}

@@ -1,0 +1,143 @@
+@import url(./js/web-components/canvas-frame-layer/canvas-frame-layer.css);
+@import url(./js/web-components/pallete-tools/pallete-tools.css);
+@import url(./js/web-components/color-tool/color-tool.css);
+@import url(./js/web-components/selector-tool/selector-tool.css);
+@import url(./js/web-components/frames-tool/frames-tool.css);
+@import url(./js/web-components/brush-size/brush-size.css);
+@import url(./js/web-components/animation-tool/animation-tool.css);
+@import url(./theme.css);
+
+html,
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.aside {
+    width: 200px;
+}
+
+.animated-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.main-block {
+    flex: 1;
+    display: flex;
+}
+
+.canvas-area {
+    flex: 1;
+}
+
+.bottom-block {
+    height: 135px;
+    display: block;
+}
+
+h1 {
+    font-size: 20px;
+}
+
+p {
+    text-align: center;
+}
+
+ul {
+    padding: 0;
+}
+
+h2 {
+    font-size: 18px;
+    text-align: center;
+}
+
+.frame {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #893232;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.frame-block {
+    display: block;
+}
+
+.frame-list {
+    display: flex;
+}
+
+.frame-buttons {
+    display: inline-flex;
+}
+
+.animation-grid.animation {
+    width: 100px;
+    height: 100px;
+}
+
+.animation-grid.animation.frame-size {
+    width: 20px;
+    height: 20px;
+}
+
+.animation-grid.animation canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.frame-area {
+    display: flex;
+}
+
+.section-area {
+    overflow: hidden;
+}
+
+.custom-button i {
+    margin: auto;
+}
+
+.change-size-area .custom-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.pallete-tool {
+    margin: 0 auto;
+    width: 70%;
+}
+
+.pallete-tool li {
+    margin: 3px auto;
+}
+
+.coordinates span {
+    color: #fff;
+}
+
+.animation-grid.animation.full-screen {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+.full-screen {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 35px;
+    top: 40px;
+}
+
+.full-screen i {
+    font-size: 12px;
+}

@@ -1,0 +1,6 @@
+brush-size *[selected] {
+    background-color: coral;
+    transform: scale(1.15);
+    transition: 0.25s;
+    pointer-events: none;
+}

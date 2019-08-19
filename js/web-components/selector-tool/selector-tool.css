@@ -1,0 +1,14 @@
+selector-tool *[selected] {
+    color: coral;
+    transition: 0.25s;
+    pointer-events: none;
+}
+
+selector-tool {
+    padding-top: 5px;
+}
+
+selector-tool div {
+    cursor: pointer;
+    font-weight: bold;
+}
