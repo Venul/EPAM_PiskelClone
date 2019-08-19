@@ -7,14 +7,19 @@
     "test": "jest",
     "lint": "eslint --fix ./js",
     "dev": "webpack-dev-server --mode development --watch",
-    "build": "webpack --mode production"
+    "build": "webpack",
+    "start": "webpack-dev-server --open"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
+    "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^3.2.0",
     "eslint": "^6.2.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-airbnb-base": "^14.0.0",
@@ -22,16 +27,19 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-wc": "^1.2.0",
+    "eslint-loader": "^2.2.1",
+    "html-webpack-plugin": "^3.2.0",
     "jest": "^24.8.0",
+    "postcss-loader": "^3.0.0",
+    "style-loader": "^1.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7",
+    "webpack-concat-plugin": "^3.0.0",
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
     "@webcomponents/webcomponentsjs": "^2.2.10",
-    "css-loader": "^3.2.0",
-    "eslint-loader": "^2.2.1",
-    "html-webpack-plugin": "^3.2.0",
-    "style-loader": "^1.0.0"
+    "cssnano": "^4.1.10"
   }
 }

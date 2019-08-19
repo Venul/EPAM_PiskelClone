@@ -1,11 +1,12 @@
+/* eslint-disable import/extensions */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable import/prefer-default-export */
-/* eslint-disable import/extensions */
+
 import { MainComponent } from '../main-component/main-component.js';
 import * as utils from '../utils/define-property.js';
 
-export class AnimationTool extends MainComponent {
+export default class AnimationTool extends MainComponent {
   constructor() {
     super();
 

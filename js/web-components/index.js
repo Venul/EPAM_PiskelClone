@@ -1,3 +1,4 @@
+/* eslint-disable import/named */
 /* eslint-disable import/extensions */
 /* eslint-disable no-unused-vars */
 import { CanvasFrameLayer } from './canvas-frame-layer/canvas-frame-layer.js';

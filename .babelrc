@@ -1,13 +1,21 @@
+// {
+//   "presets": [
+//     [
+//       "@babel/preset-env",
+//       {
+//         "targets": {
+//           "chrome": "72"
+//         },
+//       }
+//     ]
+//   ],
+//   "plugins": []
+// }
 {
   "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "targets": {
-          "chrome": "72"
-        },
-      }
-    ]
+      "env"
   ],
-  "plugins": []
+  "plugins": [
+      "transform-object-rest-spread"
+  ]
 }
