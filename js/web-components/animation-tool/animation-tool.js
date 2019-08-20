@@ -6,7 +6,7 @@
 import { MainComponent } from '../main-component/main-component.js';
 import * as utils from '../utils/define-property.js';
 
-export default class AnimationTool extends MainComponent {
+export class AnimationTool extends MainComponent {
   constructor() {
     super();
 
