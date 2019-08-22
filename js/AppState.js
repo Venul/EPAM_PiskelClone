@@ -1,6 +1,5 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable no-param-reassign */
-function defineProperty(sourse, propertyName, handlerName) {
+export function defineProperty(sourse, propertyName, handlerName) {
   const privateName = `_${propertyName}`;
   sourse[handlerName] = [];
   Object.defineProperty(sourse, propertyName, {
@@ -18,7 +17,7 @@ function defineProperty(sourse, propertyName, handlerName) {
   });
 }
 
-class AppState {
+export default class AppState {
   constructor() {
     defineProperty(this, 'activeFrame', 'onActiveFrameChanged');
     defineProperty(this, 'activeLayer', 'onActiveLayerChanged');
@@ -31,3 +30,5 @@ class AppState {
     defineProperty(this, 'animationSpeed', 'onAnimationSpeedChanged');
   }
 }
+
+export const appState = new AppState();

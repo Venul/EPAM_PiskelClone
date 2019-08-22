@@ -1,7 +1,7 @@
-import Script from '../script';
+import * as Script from '../script';
 
 describe('first script', () => {
   it('should be function', () => {
-    expect(Script.onChangeAnimationSpeed).toBeInstanceOf(function);
+    expect(Script).toBeInstanceOf(Object);
   });
 });

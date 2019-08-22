@@ -39,6 +39,7 @@
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
     "@webcomponents/webcomponentsjs": "^2.2.10",
     "cssnano": "^4.1.10"
   }
